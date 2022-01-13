@@ -1,0 +1,131 @@
+//пишите свой скрипт, по всем топикам вызывая функцию
+//function mqttPublish($topic, $value, $qos = 0, $retain = 0);
+//{"payload": "alert": "Hello!", "topic": "alarmpanel/command"}
+_______________________________________________________________
+//Displays an alert dialog within the application
+//Отображает диалоговое окно предупреждения в приложении
+
+$name=$this->getProperty('name');
+$alarmp=$this->getProperty('alarmpanel_command_alert');
+$status="{'alert': '$alarmp'}";
+
+include_once(DIR_MODULES . 'mqtt/mqtt.class.php');
+$mqtt = new mqtt();
+$topic = "alarmpanel/".$name."/command";
+$rezult = $mqtt->mqttPublish($topic, $status, 0, 0);
+_____________________________________________________________
+//Play the audio specified by the URL immediately 
+//Немедленно воспроизвести аудио, указанное в URL-адресе
+
+$name=$this->getProperty('name');
+$alarmp=$this->getProperty('alarmpanel_command_audio');
+$status="{'audio':'$alarmp'}";
+
+include_once(DIR_MODULES . 'mqtt/mqtt.class.php');
+$mqtt = new mqtt();
+$topic = "alarmpanel/".$name."/command";
+$rezult = $mqtt->mqttPublish($topic, $status, 0, 0);
+_____________________________________________________________
+//Navigate to specific dashboard number, sending 0 shows alarm screen
+//Перейдите к определенному номеру приборной панели, отправка 0 показывает экран тревоги
+//{"payload": "{'dashboard':0}", "topic": "alarmpanel/command"}
+
+$name=$this->getProperty('name');
+$alarmp=$this->getProperty('alarmpanel_command_dashboard');
+$status="{'dashboard': $alarmp}";
+
+include_once(DIR_MODULES . 'mqtt/mqtt.class.php');
+$mqtt = new mqtt();
+$topic = "alarmpanel/".$name."/command";
+$rezult = $mqtt->mqttPublish($topic, $status, 0, 0);
+_____________________________________________________________
+//Displays a system notification on the device
+//Отображает системное уведомление на устройстве
+//{"payload": "notification": "Hello!", "topic": "alarmpanel/command"}{"notification": "Hello!"}
+
+$name=$this->getProperty('name');
+$alarmp=$this->getProperty('alarmpanel_command_notification');
+$status="{'notification':'$alarmp'}";
+
+include_once(DIR_MODULES . 'mqtt/mqtt.class.php');
+$mqtt = new mqtt();
+$topic = "alarmpanel/".$name."/command";
+$rezult = $mqtt->mqttPublish($topic, $status, 0, 0);
+_____________________________________________________________
+//You can send a command using either HTTP or MQTT to have the device speak a message using Google’s Text-To-Speach. Note that the device must be running Android Lollipop or above.
+//Можно отправить команду с помощью HTTP или MQTT, чтобы устройство передало сообщение с помощью функции преобразования текста в речь Google. Обратите внимание, что устройство должно работать под управлением Android Lollipop или выше.
+//{"topic":"alarmpanel/command", "payload":"{'speak':'Hello!'}"}
+
+$name=$this->getProperty('name');
+$alarmp=$this->getProperty('alarmpanel_command_speak');
+$status="{'speak':'$alarmp'}";
+
+include_once(DIR_MODULES . 'mqtt/mqtt.class.php');
+$mqtt = new mqtt();
+$topic = "alarmpanel/".$name."/command";
+$rezult = $mqtt->mqttPublish($topic, $status, 0, 0);
+_____________________________________________________________
+//Changes the application day or night mode based on sun value (above_horizon, below_horizon)
+//Изменяет дневной или ночной режим приложения в зависимости от значения солнца (выше_горизона, ниже_горизона)
+//{"payload": "{'sun':'below_horizon'}", "topic": "alarmpanel/command"}
+
+$name=$this->getProperty('name');
+$alarmp=$this->getProperty('alarmpanel_command_sun');
+//$status='{"noti":"Павлик дома","title":"Сообщение 2","info":"Павлик","vibrate":true,"sound":true,"light":true,"id":2}';
+$status="{'sun':'$alarmp'}";
+
+include_once(DIR_MODULES . 'mqtt/mqtt.class.php');
+$mqtt = new mqtt();
+$topic = "alarmpanel/".$name."/command";
+$rezult = $mqtt->mqttPublish($topic, $status, 0, 0);
+_____________________________________________________________
+//Wakes the screen, if it is asleep
+//Пробуждает экран, если он спит
+//{"payload": "alert": "Hello!", "topic": "alarmpanel/command"}{"wake": true}
+
+$name=$this->getProperty('name');
+$alarmp=$this->getProperty('alarmpanel_command_wake');
+$status="{'wake':'$alarmp'}";
+
+include_once(DIR_MODULES . 'mqtt/mqtt.class.php');
+$mqtt = new mqtt();
+$topic = "alarmpanel/".$name."/command";
+$rezult = $mqtt->mqttPublish($topic, $status, 0, 0);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_____________________________________________________________
+//relaunch
+//перезапустить
+//{"payload": "alert": "Hello!", "topic": "alarmpanel/command"}{"clearCache":true, "relaunch":true}
+
+$name=$this->getProperty('name');
+//$alarmp=$this->getProperty('alarmpanel_command_relaunch');
+$status="{'clearCache':true, 'relaunch':true}";
+
+include_once(DIR_MODULES . 'mqtt/mqtt.class.php');
+$mqtt = new mqtt();
+$topic = "alarmpanel/".$name."/command";
+$rezult = $mqtt->mqttPublish($topic, $status, 0, 0);
+
+
+
+
