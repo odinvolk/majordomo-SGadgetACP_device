@@ -97,7 +97,45 @@ _____________________________________________________________
 //Погода
 //{"topic": "alarmpanel/command","payload":"{'weather':{'summary':'Partly Cloudy','precipitation':'0','icon':'partly-cloudy-day','temperature':'22.5','units':'°C'}}
 
-//{'weather':{'temperature': 82, 'humidity': 88, 'pressure': 30.06, 'wind_bearing': 180, 'wind_speed': 1.7, 'visibility': 10.0, 'attribution': 'Data provided by AccuWeather', 'forecast': [{'datetime': '2020-08-27T11:00:00+00:00', 'temperature': 90, 'templow': 73, 'precipitation': 0.0, 'precipitation_probability': 25, 'wind_speed': 4.6, 'wind_bearing': 151, 'condition': 'partlycloudy'}, {'datetime': '2020-08-28T11:00:00+00:00', 'temperature': 87, 'templow': 73, 'precipitation': 0.2, 'precipitation_probability': 47, 'wind_speed': 5.8, 'wind_bearing': 215, 'condition': 'lightning'}, {'datetime': '2020-08-29T11:00:00+00:00', 'temperature': 86, 'templow': 72, 'precipitation': 0.2, 'precipitation_probability': 41, 'wind_speed': 9.2, 'wind_bearing': 265, 'condition': 'partlycloudy'}, {'datetime': '2020-08-30T11:00:00+00:00', 'temperature': 86, 'templow': 67, 'precipitation': 0.1, 'precipitation_probability': 40, 'wind_speed': 4.6, 'wind_bearing': 279, 'condition': 'partlycloudy'}, {'datetime': '2020-08-31T11:00:00+00:00', 'temperature': 86, 'templow': 73, 'precipitation': 0.5, 'precipitation_probability': 40, 'wind_speed': 5.8, 'wind_bearing': 166, 'condition': 'cloudy'}], 'friendly_name': '1234 Main St'}}
+//{
+   'weather':
+   {
+    'temperature': 82, 
+	'humidity': 88, 
+	'pressure': 30.06, 
+	'wind_bearing': 180, 
+	'wind_speed': 1.7, 
+	'visibility': 10.0, 
+	'attribution': 'Data provided by AccuWeather', 
+	'forecast': 
+     [
+      {
+	   'datetime': '2020-08-27T11:00:00+00:00', 
+	   'temperature': 90, 
+	   'templow': 73, 
+	   'precipitation': 0.0, 
+	   'precipitation_probability': 25, 
+	   'wind_speed': 4.6, 
+	   'wind_bearing': 151, 
+	   'condition': 'partlycloudy'
+	  }, 
+      {
+	   'datetime': '2020-08-28T11:00:00+00:00', 
+	   'temperature': 87, 
+	   'templow': 73, 
+	   'precipitation': 0.2, 
+	   'precipitation_probability': 47, 
+	   'wind_speed': 5.8, 
+	   'wind_bearing': 215, 
+	   'condition': 'lightning'
+	  }, 
+      {'datetime': '2020-08-29T11:00:00+00:00', 'temperature': 86, 'templow': 72, 'precipitation': 0.2, 'precipitation_probability': 41, 'wind_speed': 9.2, 'wind_bearing': 265, 'condition': 'partlycloudy'}, 
+      {'datetime': '2020-08-30T11:00:00+00:00', 'temperature': 86, 'templow': 67, 'precipitation': 0.1, 'precipitation_probability': 40, 'wind_speed': 4.6, 'wind_bearing': 279, 'condition': 'partlycloudy'}, 
+      {'datetime': '2020-08-31T11:00:00+00:00', 'temperature': 86, 'templow': 73, 'precipitation': 0.5, 'precipitation_probability': 40, 'wind_speed': 5.8, 'wind_bearing': 166, 'condition': 'cloudy'}
+     ],
+    'friendly_name': '1234 Main St'
+   }
+  }
 -------------------------------------------------------------------------------------
 
 
