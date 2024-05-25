@@ -27,7 +27,9 @@
         SWM07E/home/alarm/sensor/motion
         SWM07E/home/alarm/sensor/spech
         
-Для того чтобы заработал spech вставить   Общие настройки -> Обработчики -> After SAY (code)
+Для того чтобы заработал spech вставить в   
+
+Общие настройки -> Обработчики -> After SAY (code)
 
         callMethod('MobileMAP01.command', array('ph'=>$ph,'level'=>$level));
 
