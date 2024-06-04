@@ -10,9 +10,8 @@
 */
 $state = json_decode($params['VALUE'], true); // alarmpanel/state
 
-foreach ($state as $k=>$v) 
-{
-$this->setProperty('state_'.$k, $v);
+foreach ($state as $k=>$v) {
+    $this->setProperty('state_'.$k, $v);
 }
 /* или
 $this->setProperty('state_screenOn', $params['screenOn']);
