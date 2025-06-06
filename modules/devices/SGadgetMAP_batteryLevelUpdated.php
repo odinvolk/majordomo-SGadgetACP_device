@@ -3,7 +3,7 @@
 * $this->setProperty('batteryLevel',$this->getProperty('info_battery_level')); //передает значение из метода info_battery_level в метод batteryLevel
 */
 
-/* Уже есть в родительском методе SDevices_batteryLevelUpdated.php 
+/* Уже есть в родительском методе SDevices_batteryLevelUpdated.php */
 $batteryOperated = (int)$this->getProperty('batteryOperated');
 $batteryLevel = (int)$this->getProperty('batteryLevel');
 
@@ -20,7 +20,7 @@ $this->setProperty('batteryWarning', $batteryWarning);
 if ($batteryOperated && $batteryLevel > 0) {
     $this->callMethod('keepAlive');
 }
-*/
+
 //Добавляем трансляцию в registerEvent
 if ($this->getProperty('groupRegisterEvent')) {
     $ot = $this->object_title;
