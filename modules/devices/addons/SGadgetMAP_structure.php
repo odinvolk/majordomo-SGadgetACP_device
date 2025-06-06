@@ -6,10 +6,10 @@ $this->device_types['MobileMAP'] = array(
     'CLASS'=>'SGadgetMAP',
     'DESCRIPTION'=>'Gadget devices MQTT Alarm Panel',
     'PROPERTIES'=>array(
-        'name'=>array('DESCRIPTION'=>'Имя устройства (пре топик))','_CONFIG_TYPE'=>'text'),
+        'name'=>array('DESCRIPTION'=>'Имя устройства (топик))','_CONFIG_TYPE'=>'text'),
         'mjpegUrl'=>array('DESCRIPTION'=>'Alarm Panel Camera','_CONFIG_TYPE'=>'text','_CONFIG_HELP'=>'SdTher'),
         
-        'code'=>array('DESCRIPTION'=>'Код постановки снятия с охраны','_CONFIG_TYPE'=>'text'),
+        'code'=>array('DESCRIPTION'=>'Код постановки снятия с охраны','_CONFIG_TYPE'=>'text','_CONFIG_DEFAULT' => '1234'),
         
         'mqttWriteToProperties'=>array('DESCRIPTION'=>'Включить чтение и запись доп. параметров через MQTT','_CONFIG_TYPE'=>'yesno'),
 
