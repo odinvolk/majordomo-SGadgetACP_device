@@ -9,14 +9,14 @@ $this->device_types['MobileMAP'] = array(
         'name'=>array('DESCRIPTION'=>'Имя устройства (топик))','_CONFIG_TYPE'=>'text'),
         'mjpegUrl'=>array('DESCRIPTION'=>'Alarm Panel Camera','_CONFIG_TYPE'=>'text','_CONFIG_HELP'=>'SdTher'),
         
-        'code'=>array('DESCRIPTION'=>'Код постановки снятия с охраны','_CONFIG_TYPE'=>'text','_CONFIG_DEFAULT' => '1234'),
+        'code'=>array('DESCRIPTION'=>'Код постановки снятия с охраны','_CONFIG_TYPE'=>'num','DATA_KEY'=>1,'_CONFIG_DEFAULT' => '1234'),
+        'delay'=>array('DESCRIPTION'=>'Задержка постановки охраны','_CONFIG_TYPE'=>'num','DATA_KEY'=>1,'_CONFIG_DEFAULT' => '5'),
         
-        'mqttWriteToProperties'=>array('DESCRIPTION'=>'Включить чтение и запись доп. параметров через MQTT','_CONFIG_TYPE'=>'yesno'),
-
+        'alarmPanic'=>array('DESCRIPTION'=>'Звук в режиме ПАНИКА','_CONFIG_TYPE'=>'text'),
+        'alarmTriggered'=>array('DESCRIPTION'=>'Звук в режиме ТРЕВОГА','_CONFIG_TYPE'=>'text'),
+        
         'batteryLevel'=>array('DESCRIPTION'=>'Урорвень заряда батареи','ONCHANGE'=>'batteryLevelUpdated','_CONFIG_TYPE'=>'readonly'),
         'batteryCharging'=>array('DESCRIPTION'=>'Состояние заряда батареи','_CONFIG_TYPE'=>'readonly'),
-        
-        //'motionDetectorStatus'=>array('DESCRIPTION'=>'Состояние датчика движения','_CONFIG_TYPE'=>'readonly'),
         
         'sensorMotion'=>array('DESCRIPTION'=>'Motion Detected','_CONFIG_TYPE'=>'readonly'),
         'sensorQrcode'=>array('DESCRIPTION'=>'QR Code','_CONFIG_TYPE'=>'readonly'),
@@ -25,9 +25,6 @@ $this->device_types['MobileMAP'] = array(
         'sensorLight'=>array('DESCRIPTION'=>'Alarm Panel Light Level "lx"','_CONFIG_TYPE'=>'readonly'),
         'sensorPressure'=>array('DESCRIPTION'=>'Alarm Panel Pressure "hPa"','_CONFIG_TYPE'=>'readonly'),
         'sensorTemperature'=>array('DESCRIPTION'=>'WallPanel Temperature "°C"','_CONFIG_TYPE'=>'readonly'),
-        'command'=>array('DESCRIPTION'=>'Команды управления','_CONFIG_TYPE'=>'readonly'),
-        'alarmEvent'=>array('DESCRIPTION'=>'alarmEvent','_CONFIG_TYPE'=>'readonly'),
-//        'alarmNotification'=>array('DESCRIPTION'=>'alarmNotification','_CONFIG_TYPE'=>'readonly'),
         
         'arms'=>array('DESCRIPTION'=>'Команды постановки снятия с охраны (disarmed, arming, armed_away, pending, triggered) ','ONCHANGE'=>'alarm','_CONFIG_TYPE'=>'readonly'),
         'speak'=>array('DESCRIPTION'=>'TTS для произнесения сообщения (/alarmpanel/command/speak)','ONCHANGE'=>'command','_CONFIG_TYPE'=>'readonly'),
@@ -40,9 +37,6 @@ $this->device_types['MobileMAP'] = array(
         'relaunch'=>array('DESCRIPTION'=>'Перезапуск (alarmpanel/command/relaunch)','ONCHANGE'=>'command','_CONFIG_TYPE'=>'readonly'),
         'clearCache'=>array('DESCRIPTION'=>'Очистить кэш (alarmpanel/command/clearCache)','ONCHANGE'=>'command','_CONFIG_TYPE'=>'readonly'),
         'weather'=>array('DESCRIPTION'=>'Погода','ONCHANGE'=>'command','_CONFIG_TYPE'=>'readonly'),
-        
-//        'usbPlugged'=>array('DESCRIPTION'=>'Подключена зарядка usb','_CONFIG_TYPE'=>'readonly'),
-//        'acPlugged'=>array('DESCRIPTION'=>'Подключена зарядка','_CONFIG_TYPE'=>'readonly'),
         
         'online'=>array('DESCRIPTION'=>'На связи','_CONFIG_TYPE'=>'readonly'),
         'status'=>array('DESCRIPTION'=>'status','ONCHANGE'=>'statusUpdated','_CONFIG_TYPE'=>'readonly'),
@@ -63,6 +57,6 @@ $this->device_types['MobileMAP'] = array(
         'motionDetected'=>array('DESCRIPTION'=>'Детектор движения (/alarmpanel/sensor/motion)','_CONFIG_SHOW'=>1),
         'sensorsDetected'=>array('DESCRIPTION'=>'Принимаем состояния батареи и сенсоров (/alarmpanel/sensor/battery)','_CONFIG_SHOW'=>1),
         'statusUpdated'=>array('DESCRIPTION'=>'Обновление статуса','_CONFIG_SHOW'=>0),
-        'batteryLevelUpdated'=>array('DESCRIPTION'=>'Обновление уровня заряда','_CONFIG_SHOW'=>0),
+        'batteryLevelUpdated'=>array('DESCRIPTION'=>'Обновление уровня заряда','_CONFIG_SHOW'=>0,'CALL_PARENT'=>1),
     ),
 );
